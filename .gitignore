@@ -28,6 +28,7 @@ target/
 *.project
 *.classpath
 *.iml
+*.checkstyle
 # Lock MS Word files
 *.docx#
 *.pptx#
