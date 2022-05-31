@@ -13,6 +13,7 @@ public class E02NestedLoops {
 	private static int[] arr;
 	
 	private static int n;
+	private static StringBuilder sb = new StringBuilder();
 
 	public static void main(String[] args) throws IOException {
 		
@@ -30,11 +31,16 @@ public class E02NestedLoops {
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
+//		Scanner scanner = new Scanner(System.in);
+		
+		
 		n = Integer.parseInt(reader.readLine());
 		
 		arr = new int[n];
 		
 		permute(0);
+		
+		System.out.println(sb.toString());
 
 
 		
@@ -62,9 +68,9 @@ public class E02NestedLoops {
 	private static void printArr() {
 		
 		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + " ");
+			sb.append(arr[i]).append(" "); 
 		}
-		System.out.println();
+		sb.append(System.lineSeparator());
 		
 	}
 
