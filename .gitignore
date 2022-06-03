@@ -23,6 +23,7 @@
 hs_err_pid*
 /books
 /old
+/otherSolutions
 target/
 .settings/
 *.project

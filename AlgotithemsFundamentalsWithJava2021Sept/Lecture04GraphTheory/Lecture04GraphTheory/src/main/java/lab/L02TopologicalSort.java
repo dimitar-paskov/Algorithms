@@ -1,4 +1,4 @@
-import java.util.ArrayDeque;
+package lab;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Main {
+public class L02TopologicalSort {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
@@ -51,65 +51,12 @@ public class Main {
 
 	public static List<Deque<Integer>> getConnectedComponents(List<List<Integer>> graph) {
 
-		boolean[] visited = new boolean[graph.size()];
+		
 
-		List<Deque<Integer>> components = new ArrayList<>();
-
-		for (int start = 0; start < graph.size(); start++) {
-
-			if (!visited[start]) {
-				components.add(new ArrayDeque<>());
-//				dfs( start, components, graph,visited);
-				bfs(start, components, graph, visited);
-
-				System.out.println();
-			}
-		}
-
-		return components;
+		return null;
 
 	}
 
-	private static void bfs(int start, List<Deque<Integer>> components, List<List<Integer>> graph, boolean[] visited) {
-
-		Deque<Integer> queue = new ArrayDeque<>();
-		visited[start] = true;
-//		queue.offer(start);
-		queue.push(start);
-
-		while (!queue.isEmpty()) {
-//			int node = queue.poll();
-			int node = queue.pop();
-
-			components.get(components.size() - 1).offer(node);
-
-			for (int child : graph.get(node)) {
-
-				if (!visited[child]) {
-					visited[child] = true;
-//					queue.offer(child);
-					queue.push(child);
-				}
-
-			}
-
-		}
-
-	}
-
-	private static void dfs(int node, List<Deque<Integer>> components, List<List<Integer>> graph, boolean[] visited) {
-
-		if (!visited[node]) {
-			visited[node] = true;
-
-			for (int child : graph.get(node)) {
-				dfs(child, components, graph, visited);
-			}
-
-			components.get(components.size() - 1).offer(node);
-		}
-
-	}
 
 //  topSort with BFS
 //	public static Collection<String> topSort(Map<String, List<String>> graph) {
